@@ -1,0 +1,241 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #212846;
+	padding: 20px 40px 40px;
+	font-family: Helvetica;
+	text-rendering: geometricPrecision;
+}
+
+#progressbar{
+	border: 2px solid #3e4666;
+	height: 15px;
+	border-radius: 20px;
+	background-image: linear-gradient(to right, #e81d61, #ad74ed);
+	background-repeat: no-repeat;
+	background-size: 0%;
+	transition: background-size 1s ease-out;
+}
+
+h3{
+	color: #8e96ba;
+	font-size: 18px;
+	margin-top: 20px;
+	padding-bottom: 15px;
+	border-bottom: 2px dotted #264667;
+}
+
+.question{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding-top: 15px;
+	letter-spacing: -0.5px;
+	line-height: 28px;
+}
+
+.question--length{
+	font-size: 0.5em;
+	font-weight: 400;
+}
+
+#q1, #q2, #q3, #q4, #q5, #q6, #q7, #q8, #q9, #q10{
+	position: fixed;
+	bottom: 20px;
+	left: 40px;
+	right: 40px;
+	max-width: 100%;
+}
+
+button{
+	display: block;
+	background-color: #e81d61;
+	border: none;
+	padding: 15px 40px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 40px;
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: bolder;
+	color: white;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+	position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: white;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #e81d61;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.buttonborder{
+	border: 3px solid #3e4666;;
+	height: auto;
+	min-width: 100%;
+	padding: 15px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+.animated {
+    animation-duration: .8s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 0.8s;
+    -webkit-animation-fill-mode: both;
+}
+
+.animatedresult {
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+}
+
+.animatedresult2 {
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+    -webkit-animation-name: fadeInUp;
+}
+
+#logo{
+	display: block;
+	height: 35px;
+	margin-bottom: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.8;
+}
+
+#re{
+	color: white;	
+}
+
+.radio-content{
+	border: 3px solid #3e4666;;
+	height: auto;
+	min-width: 100%;
+	padding: 15px;
+	margin-bottom: 15px;
+	border-radius: 20px;
+	animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both
+}
+
+#resulttitle{
+	margin-top: 25px;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: center;
+	line-height: 25px;
+	opacity: 0.8;
+}
+
+.resultcontent{
+	display: block;
+	font-size: 12px;
+	line-height: 19px;
+	margin-top: 15px;
+	font-weight: 500;
+	opacity: 0.7;
+}
+
+#container {
+  margin: 20px auto;
+  width: 200px;
+  height: 100px;
+  margin-bottom: 50px;
+}
+
+.progressbar-text{
+	font-size: 50px !important;
+	font-weight: 600;
+	/*bottom: 15px !important; */
+}
