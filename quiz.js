@@ -9,7 +9,7 @@ var q8 = 0;
 var q9 = 0;
 var q10 = 0;
 var finalresult = 0;
-var animate = finalresult * 1/5;
+var animate = finalresult * 1 / 5;
 
 var qcount = 1;
 
@@ -18,7 +18,7 @@ updateq1 = () => {
     event.preventDefault();
     document.getElementById("one").style.display = "none";
     document.getElementById("two").style.display = "block";
-    qcount ++;
+    qcount++;   
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '10%';
     console.log("q1 submitted!");
@@ -30,7 +30,7 @@ updateq2 = () => {
     event.preventDefault();
     document.getElementById("two").style.display = "none";
     document.getElementById("three").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '20%';
     console.log("q2 submitted!");
@@ -41,7 +41,7 @@ updateq3 = () => {
     event.preventDefault();
     document.getElementById("three").style.display = "none";
     document.getElementById("four").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '30%';
     console.log("q3 submitted!");
@@ -52,7 +52,7 @@ updateq4 = () => {
     event.preventDefault();
     document.getElementById("four").style.display = "none";
     document.getElementById("five").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '40%';
     console.log("q4 submitted!");
@@ -63,7 +63,7 @@ updateq5 = () => {
     event.preventDefault();
     document.getElementById("five").style.display = "none";
     document.getElementById("six").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '50%';
     console.log("q5 submitted!");
@@ -74,7 +74,7 @@ updateq6 = () => {
     event.preventDefault();
     document.getElementById("six").style.display = "none";
     document.getElementById("seven").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '60%';
     console.log("q6 submitted!");
@@ -85,7 +85,7 @@ updateq7 = () => {
     event.preventDefault();
     document.getElementById("seven").style.display = "none";
     document.getElementById("eight").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '70%';
     console.log("q7 submitted!");
@@ -96,7 +96,7 @@ updateq8 = () => {
     event.preventDefault();
     document.getElementById("eight").style.display = "none";
     document.getElementById("nine").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '80%';
     console.log("q8 submitted!");
@@ -107,13 +107,30 @@ updateq9 = () => {
     event.preventDefault();
     document.getElementById("nine").style.display = "none";
     document.getElementById("ten").style.display = "block";
-    qcount ++;
+    qcount++;
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("progressbar").style.backgroundSize = '90%';
     console.log("q9 submitted!");
 }
 
-animatefn = () => { animate = finalresult * 1/5}
+animatefn = () => {
+    animate = finalresult * 1 / 5
+
+    if(finalresult > 4){
+        $("#overviewtext").html("Awesome!");
+        console.log("above 4");
+    } else if(finalresult > 3){
+        $("#overviewtext").html("Great!");
+        console.log("above 3");
+    } else if(finalresult > 2){
+        $("#overviewtext").html("Not bad!");
+        console.log("above 2");
+    } else {
+        $("#overviewtext").html("Poor");
+        console.log("above 1");
+    }
+
+}
 
 updateq10 = () => {
     q10 = parseFloat($('input[name="q10"]:checked').val());
@@ -134,23 +151,23 @@ updateq10 = () => {
 
 
 restart = () => {
-  document.getElementById("qcount").innerHTML = qcount;
-  document.getElementById("re").style.display = "none";
-  document.getElementById("one").style.display = "block";
-  document.getElementById("head").style.display = "block";
-  finalresult = 0;
-  document.getElementById("progressbar").style.backgroundSize = '0%';
-    $('input[name=q1]').attr('checked',false);
-    $('input[name=q2]').attr('checked',false);
-    $('input[name=q3]').attr('checked',false);
-    $('input[name=q4]').attr('checked',false);
-    $('input[name=q5]').attr('checked',false);
-    $('input[name=q6]').attr('checked',false);
-    $('input[name=q7]').attr('checked',false);
-    $('input[name=q8]').attr('checked',false);
-    $('input[name=q9]').attr('checked',false);
-    $('input[name=q10]').attr('checked',false);
-    
+    document.getElementById("qcount").innerHTML = qcount;
+    document.getElementById("re").style.display = "none";
+    document.getElementById("one").style.display = "block";
+    document.getElementById("head").style.display = "block";
+    finalresult = 0;
+    document.getElementById("progressbar").style.backgroundSize = '0%';
+    $('input[name=q1]').attr('checked', false);
+    $('input[name=q2]').attr('checked', false);
+    $('input[name=q3]').attr('checked', false);
+    $('input[name=q4]').attr('checked', false);
+    $('input[name=q5]').attr('checked', false);
+    $('input[name=q6]').attr('checked', false);
+    $('input[name=q7]').attr('checked', false);
+    $('input[name=q8]').attr('checked', false);
+    $('input[name=q9]').attr('checked', false);
+    $('input[name=q10]').attr('checked', false);
+
 }
 
 
@@ -158,33 +175,38 @@ restart = () => {
 // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
 
 var bar = new ProgressBar.SemiCircle(container, {
-  strokeWidth: 6,
-  color: '#FFEA82',
-  trailColor: '#eee',
-  trailWidth: 1,
-  easing: 'easeInOut',
-  duration: 1400,
-  svgStyle: null,
-  text: {
-    value: '0',
-    alignToBottom: true
-  },
-  from: {color: '#0069ff'},
-  to: {color: '#e81d61'},
-  // Set default step function for all animate calls
-  step: (state, bar) => {
-    bar.path.setAttribute('stroke', state.color);
-    var value = bar.value() * 5;
-    if (value === 0) {
-      bar.setText('');
-    } else {
-      bar.setText(value.toFixed(2));
-    }
+    strokeWidth: 6,
+    color: '#FFEA82',
+    trailColor: '#eee',
+    trailWidth: 1,
+    easing: 'easeInOut',
+    duration: 1400,
+    svgStyle: null,
+    text: {
+        value: '0',
+        alignToBottom: true
+    },
+    from: {
+        color: '#0069ff'
+    },
+    to: {
+        color: '#e81d61'
+    },
+    // Set default step function for all animate calls
+    step: (state, bar) => {
+        bar.path.setAttribute('stroke', state.color);
+        var value = bar.value() * 5;
+        if (value === 0) {
+            bar.setText('');
+        } else {
+            bar.setText(value.toFixed(2));
+        }
 
-    bar.text.style.color = state.color;
-  }
+        bar.text.style.color = state.color;
+    }
 });
 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
 bar.text.style.fontSize = '2rem';
 
-bar.animate(parseFloat(animate));  // Number from 0.0 to 1.0
+bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
+
