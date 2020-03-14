@@ -16,6 +16,7 @@ var qcount = 1;
 updateq1 = () => {
     q1 = parseFloat($('input[name="q1"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("one").style.display = "none";
     document.getElementById("two").style.display = "block";
     qcount++;   
@@ -28,6 +29,7 @@ updateq1 = () => {
 updateq2 = () => {
     q2 = parseFloat($('input[name="q2"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("two").style.display = "none";
     document.getElementById("three").style.display = "block";
     qcount++;
@@ -39,6 +41,7 @@ updateq2 = () => {
 updateq3 = () => {
     q3 = parseFloat($('input[name="q3"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("three").style.display = "none";
     document.getElementById("four").style.display = "block";
     qcount++;
@@ -50,6 +53,7 @@ updateq3 = () => {
 updateq4 = () => {
     q4 = parseFloat($('input[name="q4"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("four").style.display = "none";
     document.getElementById("five").style.display = "block";
     qcount++;
@@ -61,6 +65,7 @@ updateq4 = () => {
 updateq5 = () => {
     q5 = parseFloat($('input[name="q5"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("five").style.display = "none";
     document.getElementById("six").style.display = "block";
     qcount++;
@@ -72,6 +77,7 @@ updateq5 = () => {
 updateq6 = () => {
     q6 = parseFloat($('input[name="q6"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("six").style.display = "none";
     document.getElementById("seven").style.display = "block";
     qcount++;
@@ -83,6 +89,7 @@ updateq6 = () => {
 updateq7 = () => {
     q7 = parseFloat($('input[name="q7"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("seven").style.display = "none";
     document.getElementById("eight").style.display = "block";
     qcount++;
@@ -94,6 +101,7 @@ updateq7 = () => {
 updateq8 = () => {
     q8 = parseFloat($('input[name="q8"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("eight").style.display = "none";
     document.getElementById("nine").style.display = "block";
     qcount++;
@@ -105,6 +113,7 @@ updateq8 = () => {
 updateq9 = () => {
     q9 = parseFloat($('input[name="q9"]:checked').val());
     event.preventDefault();
+    $(".NEXT").attr( "disabled", "disabled" );
     document.getElementById("nine").style.display = "none";
     document.getElementById("ten").style.display = "block";
     qcount++;
@@ -211,8 +220,8 @@ bar.text.style.fontSize = '2rem';
 bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
 
 $(".radio-content").click(function() {
-  // $("#radio_1").prop("checked", true);
+console.log("button clicked");
   $(this).find("input").prop("checked", true);
+  $('.NEXT').removeAttr("disabled")
   return false;
 });
-

@@ -72,6 +72,14 @@ button {
 	font-size: 18px;
 	font-weight: bolder;
 	color: white;
+	transition: all 0.2s ease;
+}
+
+button:disabled,
+button[disabled]{
+	pointer-events: none;
+	background-color: #69696926;
+	color: #ffffff59;
 }
 
 [type="radio"]:checked,
