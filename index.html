@@ -22,12 +22,12 @@
             <div id="progressbar"></div>
          </div>
       </header>
-      <div id="splash" style="display: none;">
+      <div id="splash" style="display: block;">
          <img src="kaarvalogowhite.png" id="logo" style="opacity: 1" />
          <div id="welcometext">
             Fitness Calculator
             <div id="welcomesubtext">Find out your Financial Fitness Score in less than five minutes.</div>
-            <img src="score.gif" style="width: 100%;margin-top: 30px; opacity: 0.5;" />
+            <img src="score.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto;" />
             <button onclick="start();" style=" position: fixed; left: 50%;transform: translate(-50%, 0); bottom: 60px; width: 60%;">Get Started</button>
          </div>
       </div>
@@ -251,7 +251,7 @@
             <button class="NEXT" onclick="updateq10()">Next</button>
          </div>
       </div>
-      <div id="re" style="display: block;">
+      <div id="re" style="display: none;">
          <div class="flex">
             <img src="kaarvalogowhite.png" id="logo" />
             <div id="againbtn" onclick="restart();">again</div>
