@@ -24,7 +24,7 @@
             <div id="progressbar"></div>
          </div>
       </header>
-      <div id="splash" style="display: block;">
+      <div id="splash" style="display: none;">
          <div class="flex logowrapper">
             <img src="kaarvalogowhite.png" id="logow" style="opacity: 1" />
             <img src="kaarvalogobrand.png" id="logod" style="opacity: 1; display: none;"  />
@@ -259,19 +259,19 @@
             <button class="NEXT" onclick="updateq10()">Next</button>
          </div>
       </div>
-      <div id="re" style="display: none;">
+      <div id="re" style="display: block;">
          <div class="flex">
             <img src="kaarvalogowhite.png" id="logo" />
             <div id="againbtn" onclick="restart();">again</div>
          </div>
-         <div id="resulttitle" style="opacity: 1;">Your financial fitness score is</div>
+         <div class="resulttitle" style="opacity: 1;">Your financial fitness score is</div>
          <div id="container"></div>
          <div id="overviewtext"></div>
          <button onclick="fillForm()">Next</button>
-         <div id="resulttitle" class="animatedresult animatedFadeInUp fadeInUp">About your score
+         <div class="resulttitle animatedresult animatedFadeInUp fadeInUp">About your score
             <span class="resultcontent">You've scored yourself lower than you really are. Some things to do with finances might seem scary but you're not doing as badly as perhaps you think you are.</span>
          </div>
-         <div id="resulttitle" class="animatedresult2 animatedFadeInUp fadeInUp">Next Steps...
+         <div class="resulttitle animatedresult2 animatedFadeInUp fadeInUp">Next Steps...
             <span class="resultcontent" >Do you want to know how you scored versus other people, and want some top tips to improve your score? You are one simple step away. Your personalised benchmark report will include case studies that help explain what a financial fitness score means and give useful tips on how to improve your score, reduce money worries and get started on a journey to financial freedom.</span>
          </div>
          <!-- Points: <span id="result"></span> -->

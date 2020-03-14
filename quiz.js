@@ -30,13 +30,16 @@ function changemode(){
    $("#logod1").toggle();
    $("#progressbar").toggleClass("progressbar--l");
    $("#fitnesscalc").toggleClass("fitnesscalc--l");
-   // common
-
-   // q1
    $(".question").toggleClass("question--l");
    $(".radio-content").toggleClass("radio-content--l");
    $(".radio-content label").toggleClass("label--l");
-   // q1
+   // common
+
+   //results
+   $(".resulttitle").toggleClass("resulttitle--l");
+   $(".resultcontent").toggleClass("resultcontent--l");
+   //results
+   
 }
 
 updateq1 = () => {
