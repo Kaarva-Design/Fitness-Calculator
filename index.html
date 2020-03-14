@@ -6,12 +6,25 @@
       <title>Kaarva - Fitness Calculator</title>
    </head>
    <body>
-      <header id="head" style="display: block;">
-         <img src="kaarvalogowhite.png" id="logo" />
-         <div id="progressbar"></div>
-         <h3>Question <span id="qcount">1</span> <span class="question--length">/10</span></h3>
+      <header id="head" style="display: none;">
+         <div class="flex logowrapper" style="">
+            <img src="kaarvalogowhite.png" id="logo" />
+            <div style="color: white; padding-bottom: 5px; font-weight: bolder"><span style="color: #e81d61">fitness</span> calculator</div>
+         </div>
+         <div class="flex progressbarwrapper">
+             <h3><span id="qcount">1</span> <span class="question--length">/10</span></h3>
+            <div id="progressbar"></div>
+         </div>
       </header>
-      <div id="one" style="display: block;">
+      <div id="splash" style="display: block;">
+         <img src="kaarvalogowhite.png" id="logo" style="opacity: 1" />
+         <div id="welcometext">Fitness Calculator
+            <div id="welcomesubtext">Find out your Financial Fitness Score in less than five minutes.</div>
+            <img src="score.gif" style="width: 100%;margin-top: 30px; opacity: 0.5;" />
+            <button onclick="start();" style=" position: fixed; left: 50%;transform: translate(-50%, 0); bottom: 60px; width: 60%;">Get Started</button>
+         </div>
+      </div>
+      <div id="one" style="display: none;">
          <div class="question">I run out of money before I get my salary</div>
          <div id="q1" class="radio-block animated animatedFadeInUp fadeInUp">
             <div class="radio-content">
@@ -70,6 +83,10 @@
                <input id="radio9" type="radio" name="q3" value="5" id="q3" />
                <label for="radio9"><span></span> Never</label>
             </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
+            </div>
             <button class="NEXT" onclick="updateq3()">Next</button>
          </div>
       </div>
@@ -87,6 +104,10 @@
             <div class="radio-content">
                <input id="radio12" type="radio" name="q4" value="5" id="q3" />
                <label for="radio12"><span></span> Never</label>
+            </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq4()">Next</button>
          </div>
@@ -106,6 +127,10 @@
                <input id="radio15" type="radio" name="q5" value="5" id="q3" />
                <label for="radio15"><span></span> Never</label>
             </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
+            </div>
             <button class="NEXT" onclick="updateq5()">Next</button>
          </div>
       </div>
@@ -123,6 +148,10 @@
             <div class="radio-content">
                <input id="radio18" type="radio" name="q6" value="5" id="q3" />
                <label for="radio18"><span></span> Disagree</label>
+            </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq6()">Next</button>
          </div>
@@ -142,6 +171,10 @@
                <input id="radio21" type="radio" name="q7" value="5" id="q3" />
                <label for="radio21"><span></span> Disagree</label>
             </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
+            </div>
             <button class="NEXT" onclick="updateq7()">Next</button>
          </div>
       </div>
@@ -159,6 +192,10 @@
             <div class="radio-content">
                <input id="radio24" type="radio" name="q8" value="5" id="q3" />
                <label for="radio24"><span></span> Disagree</label>
+            </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq8()">Next</button>
          </div>
@@ -178,6 +215,10 @@
                <input id="radio27" type="radio" name="q9" value="5" id="q3" />
                <label for="radio27"><span></span> Disagree</label>
             </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
+            </div>
             <button class="NEXT" onclick="updateq9()">Next</button>
          </div>
       </div>
@@ -196,6 +237,10 @@
                <input id="radio30" type="radio" name="q10" value="5" id="q3" />
                <label for="radio30"><span></span> Disagree</label>
             </div>
+            <div class="radio-content">
+               <input id="radio8" type="radio" name="q2" value="5" id="q3" />
+               <label for="radio8"><span></span> Never</label>
+            </div>
             <button class="NEXT" onclick="updateq10()">Next</button>
          </div>
       </div>
@@ -211,7 +256,7 @@
             <span class="resultcontent" >Do you want to know how you scored versus other people, and want some top tips to improve your score? You are one simple step away. Your personalised benchmark report will include case studies that help explain what a financial fitness score means and give useful tips on how to improve your score, reduce money worries and get started on a journey to financial freedom.</span>
          </div>
          <!-- Points: <span id="result"></span> -->
-         <button onclick="restart()">Again</button>
+         <button onclick="fillForm()">Next</button>
       </div>
    </body>
    <script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>

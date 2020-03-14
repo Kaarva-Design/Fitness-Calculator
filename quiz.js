@@ -159,6 +159,13 @@ updateq10 = () => {
 }
 
 
+start = () => {
+    document.getElementById("splash").style.display = "none";
+    document.getElementById("one").style.display = "block";
+    document.getElementById("head").style.display = "block";
+}
+
+
 restart = () => {
     document.getElementById("qcount").innerHTML = qcount;
     document.getElementById("re").style.display = "none";
@@ -178,6 +185,7 @@ restart = () => {
     $('input[name=q10]').attr('checked', false);
 
 }
+
 
 
 // progressbar.js@1.0.0 version is used
