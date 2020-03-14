@@ -13,6 +13,32 @@ var animate = finalresult * 1 / 5;
 
 var qcount = 1;
 
+function changemode(){
+   // welcomescrceen
+   $("#sun").toggle();
+   $("#moon").toggle();
+   $("#logow").toggle();
+   $("#logod").toggle();
+   $("#scored").toggle();
+   $("#scorel").toggle();
+   $("body").toggleClass("light");
+   $("#welcometext").toggleClass("welcometext--l");
+   // welcomescrceen
+
+   // common
+   $("#logow1").toggle();
+   $("#logod1").toggle();
+   $("#progressbar").toggleClass("progressbar--l");
+   $("#fitnesscalc").toggleClass("fitnesscalc--l");
+   // common
+
+   // q1
+   $(".question").toggleClass("question--l");
+   $(".radio-content").toggleClass("radio-content--l");
+   $(".radio-content label").toggleClass("label--l");
+   // q1
+}
+
 updateq1 = () => {
    q1 = parseFloat($('input[name="q1"]:checked').val());
    event.preventDefault();

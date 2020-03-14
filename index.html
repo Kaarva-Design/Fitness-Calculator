@@ -14,9 +14,10 @@
       </div>
       <!-- no landscape compatability -->
       <header id="head" style="display: none;">
-         <div class="flex logowrapper" style="">
-            <img src="kaarvalogowhite.png" id="logo" />
-            <div style="color: white; padding-bottom: 5px; font-weight: bolder"><span style="color: #e81d61">fitness</span> calculator</div>
+         <div class="flex logowrapper">
+            <img src="kaarvalogowhite.png" id="logow1" style="opacity: 1" />
+            <img src="kaarvalogobrand.png" id="logod1" style="opacity: 1; display: none;"  />
+            <div id="fitnesscalc" style="color: white; padding-bottom: 5px; font-weight: bolder; opacity: 0.8;"><span style="color: #e81d61">fitness</span> calculator</div>
          </div>
          <div class="flex progressbarwrapper">
             <h3><span id="qcount">1</span> <span class="question--length">/10</span></h3>
@@ -24,11 +25,17 @@
          </div>
       </header>
       <div id="splash" style="display: block;">
-         <img src="kaarvalogowhite.png" id="logo" style="opacity: 1" />
+         <div class="flex logowrapper">
+            <img src="kaarvalogowhite.png" id="logow" style="opacity: 1" />
+            <img src="kaarvalogobrand.png" id="logod" style="opacity: 1; display: none;"  />
+            <img id="sun" src="sun.svg" style="height: 25px; opacity: 0.5;" onclick="changemode();" />
+            <img id="moon" src="moon.svg" style="height: 18px; padding-right: 4px; display: none; opacity: 0.5;" onclick="changemode();" />
+         </div>
          <div id="welcometext">
             Fitness Calculator
             <div id="welcomesubtext">Find out your Financial Fitness Score in less than five minutes.</div>
-            <img src="score.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto;" />
+            <img id="scored" src="score.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto;" />
+            <img id="scorel" src="score-l.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto; display: none;" />
             <button onclick="start();" style=" position: fixed; left: 50%;transform: translate(-50%, 0); bottom: 60px; width: 60%;">Get Started</button>
          </div>
       </div>
@@ -261,7 +268,7 @@
          <div id="container"></div>
          <div id="overviewtext"></div>
          <button onclick="fillForm()">Next</button>
-         <div id="resulttitle" class="animatedresult animatedFadeInUp fadeInUp">About yout score
+         <div id="resulttitle" class="animatedresult animatedFadeInUp fadeInUp">About your score
             <span class="resultcontent">You've scored yourself lower than you really are. Some things to do with finances might seem scary but you're not doing as badly as perhaps you think you are.</span>
          </div>
          <div id="resulttitle" class="animatedresult2 animatedFadeInUp fadeInUp">Next Steps...

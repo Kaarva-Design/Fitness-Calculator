@@ -10,6 +10,12 @@ body {
    padding: 20px 30px 40px;
    font-family: Helvetica;
    text-rendering: geometricPrecision;
+   transition: 0.2s;
+}
+
+body.light{
+   background-color: #f9fbfd;
+   transition: 0.2s;
 }
 
 .flex {
@@ -22,6 +28,10 @@ body {
    margin-bottom: 15px;
 }
 
+.fitnesscalc--l{
+   color: #161c2d !important;
+}
+
 #progressbar {
    border: 2px solid #3e4666;
    height: 15px;
@@ -31,6 +41,10 @@ body {
    background-size: 0%;
    transition: background-size 1s ease-out;
    width: 85%;
+}
+
+.progressbar--l{
+   border: 2px solid #ddd !important;
 }
 
 .progressbarwrapper {
@@ -52,6 +66,10 @@ h3 {
    padding-top: 15px;
    letter-spacing: -0.5px;
    line-height: 28px;
+}
+
+.question--l {
+   color: #161c2d;
 }
 
 .question--length {
@@ -155,7 +173,6 @@ button[disabled] {
 
 .buttonborder {
    border: 3px solid #3e4666;
-   ;
    height: auto;
    min-width: 100%;
    padding: 15px;
@@ -164,9 +181,8 @@ button[disabled] {
    animation-duration: 1s;
    animation-fill-mode: both;
    -webkit-animation-duration: 1s;
-   -webkit-animation-fill-mode: both
+   -webkit-animation-fill-mode: both;
 }
-
 
 /* Animation */
 
@@ -221,13 +237,14 @@ button[disabled] {
    -webkit-animation-name: fadeInUp;
 }
 
-#logo {
+#logo, #logow, #logod, #logod1, #logow1 {
    /*display: block;*/
    height: 35px;
    /*margin-bottom: 20px;*/
    /*margin-left: auto;*/
    /*margin-right: auto;*/
    opacity: 0.8;
+   transition: 0.2s;
 }
 
 #re {
@@ -245,6 +262,14 @@ button[disabled] {
    animation-fill-mode: both;
    -webkit-animation-duration: 1s;
    -webkit-animation-fill-mode: both
+}
+
+.radio-content--l {
+   border: 2px solid #ddd;
+}
+
+.label--l {
+   color: #161c2d !important;
 }
 
 #resulttitle {
@@ -291,6 +316,10 @@ button[disabled] {
    font-weight: bold;
    font-size: 20px;
    margin-top: 28px
+}
+
+.welcometext--l {
+   color: #161c2d !important;
 }
 
 #welcomesubtext {
