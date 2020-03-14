@@ -151,6 +151,7 @@ updateq10 = () => {
    document.getElementById("re").style.display = "block";
    document.getElementById("head").style.display = "none";
    document.getElementById("nine").style.display = "none";
+   document.getElementById("form").style.display = "none";
    document.getElementById("ten").style.display = "none";
    qcount = 1;
    document.getElementById("qcount").innerHTML = qcount;
