@@ -210,3 +210,9 @@ bar.text.style.fontSize = '2rem';
 
 bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
 
+$(".radio-content").click(function() {
+  // $("#radio_1").prop("checked", true);
+  $(this).find("input").prop("checked", true);
+  return false;
+});
+
