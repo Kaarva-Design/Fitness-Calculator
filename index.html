@@ -7,7 +7,7 @@
       <link rel="stylesheet" type="text/css" href="style.css">
       <title>Kaarva - Fitness Calculator</title>
    </head>
-   <body>
+   <body class="light">
       <!-- no landscape compatability/ -->
       <div class="device-notification">
          <p class="device-notification--message">Kaarva has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed!</p>
@@ -15,246 +15,246 @@
       <!-- no landscape compatability -->
       <header id="head" style="display: none;">
          <div class="flex logowrapper">
-            <img src="kaarvalogowhite.png" id="logow1" style="opacity: 1" />
-            <img src="kaarvalogobrand.png" id="logod1" style="opacity: 1; display: none;"  />
-            <div id="fitnesscalc" style="color: white; padding-bottom: 5px; font-weight: bolder; opacity: 0.8;"><span style="color: #e81d61">fitness</span> calculator</div>
+            <img src="kaarvalogowhite.png" id="logow1" style="opacity: 1; display:  none;" />
+            <img src="kaarvalogobrand.png" id="logod1" style="opacity: 1; display: block;"  />
+            <div id="fitnesscalc" class="fitnesscalc--l" style="color: white; padding-bottom: 5px; font-weight: bolder; opacity: 0.8;"><span style="color: #e81d61">fitness</span> calculator</div>
          </div>
          <div class="flex progressbarwrapper">
             <h3><span id="qcount">1</span> <span class="question--length">/10</span></h3>
-            <div id="progressbar"></div>
+            <div id="progressbar" class="progressbar--l"></div>
          </div>
       </header>
       <div id="splash" style="display: block;">
          <div class="flex logowrapper">
-            <img src="kaarvalogowhite.png" id="logow" style="opacity: 1" />
-            <img src="kaarvalogobrand.png" id="logod" style="opacity: 1; display: none;"  />
-            <img id="sun" src="sun.svg" style="height: 25px; opacity: 0.5;" onclick="changemode();" />
-            <img id="moon" src="moon.svg" style="height: 18px; padding-right: 4px; display: none; opacity: 0.5;" onclick="changemode();" />
+            <img src="kaarvalogowhite.png" id="logow" style="opacity: 1; display: none;" />
+            <img src="kaarvalogobrand.png" id="logod" style="opacity: 1; display: block;"  />
+            <img id="sun" src="sun.svg" style="height: 25px; opacity: 0.5; display: none;" onclick="changemode();" />
+            <img id="moon" src="moon.svg" style="height: 18px; padding-right: 4px; opacity: 0.5; display: block;" onclick="changemode();" />
          </div>
-         <div id="welcometext">
-            Fitness Calculator
-            <div id="welcomesubtext">Find out your Financial Fitness Score in less than five minutes.</div>
-            <img id="scored" src="score.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto;" />
-            <img id="scorel" src="score-l.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto; display: none;" />
+         <div id="welcometext" class="welcometext--l">
+            Financial Fitness Calculator
+            <div id="welcomesubtext" class="welcomesubtext--l">Find out your Financial Fitness Score in less than five minutes.</div>
+            <img id="scored" src="score.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto; display: none;" />
+            <img id="scorel" src="score-l.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto; display: block;" />
             <button onclick="start();" style=" position: fixed; left: 50%;transform: translate(-50%, 0); bottom: 60px; width: 60%;">Get Started</button>
          </div>
       </div>
       <div id="one" style="display: none;">
-         <div class="question">I run out of money before I get my salary</div>
+         <div class="question question--l">I run out of money before I get my salary</div>
          <div id="q1" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio1" type="radio" name="q1" value="1" id="q1" />
-               <label for="radio1"><span></span> Always</label>
+               <label class="label--l" for="radio1"><span></span> Always</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio2" type="radio" name="q1" value="2.5" id="q2" />
-               <label for="radio2"><span></span> Sometimes</label>
+               <label class="label--l" for="radio2"><span></span> Sometimes</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio3" type="radio" name="q1" value="3.5" id="q3" />
-               <label for="radio3"><span></span> Never</label>
+               <label class="label--l" for="radio3"><span></span> Never</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio4" type="radio" name="q1" value="5" id="q3" />
-               <label for="radio4"><span></span> Never</label>
+               <label class="label--l" for="radio4"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq1()" disabled="disabled">Next</button>
          </div>
       </div>
       <div id="two" style="display: none">
-         <div class="question">I don't pay the complete monthly bill on my credit cards</div>
+         <div class="question question--l">I don't pay the complete monthly bill on my credit cards</div>
          <div id="q2" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio5" type="radio" name="q2" value="1" id="q1" />
-               <label for="radio5"><span></span> Always</label>
+               <label class="label--l" for="radio5"><span></span> Always</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio6" type="radio" name="q2" value="2.5" id="q2" />
-               <label for="radio6"><span></span> Sometimes</label>
+               <label class="label--l" for="radio6"><span></span> Sometimes</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio7" type="radio" name="q2" value="3.5" id="q3" />
-               <label for="radio7"><span></span> Never</label>
+               <label class="label--l" for="radio7"><span></span> Never</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio8" type="radio" name="q2" value="5" id="q3" />
-               <label for="radio8"><span></span> Never</label>
+               <label class="label--l" for="radio8"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq2()">Next</button>
          </div>
       </div>
       <div id="three" style="display: none">
-         <div class="question">I don't have enough to spend on things that I really enjoy doing without feeling guilty</div>
+         <div class="question question--l">I don't have enough to spend on things that I really enjoy doing without feeling guilty</div>
          <div id="q3" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio9" type="radio" name="q3" value="1" id="q1" />
-               <label for="radio9"><span></span> Always</label>
+               <label class="label--l" for="radio9"><span></span> Always</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio10" type="radio" name="q3" value="2.5" id="q2" />
-               <label for="radio10"><span></span> Sometimes</label>
+               <label class="label--l" for="radio10"><span></span> Sometimes</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio11" type="radio" name="q3" value="3.5" id="q3" />
-               <label for="radio12"><span></span> Never</label>
+               <label class="label--l" for="radio12"><span></span> Never</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio13" type="radio" name="q3" value="5" id="q3" />
-               <label for="radio13"><span></span> Never</label>
+               <label class="label--l" for="radio13"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq3()">Next</button>
          </div>
       </div>
       <div id="four" style="display: none">
-         <div class="question">I don't have enough to take care of life's unexpected expenses</div>
+         <div class="question question--l">I don't have enough to take care of life's unexpected expenses</div>
          <div id="q4" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio14" type="radio" name="q4" value="1" id="q1" />
-               <label for="radio14"><span></span> Always</label>
+               <label class="label--l" for="radio14"><span></span> Always</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio15" type="radio" name="q4" value="2.5" id="q2" />
-               <label for="radio15"><span></span> Sometimes</label>
+               <label class="label--l" for="radio15"><span></span> Sometimes</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio16" type="radio" name="q4" value="3.5" id="q3" />
-               <label for="radio16"><span></span> Never</label>
+               <label class="label--l" for="radio16"><span></span> Never</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio17" type="radio" name="q4" value="5" id="q3" />
-               <label for="radio17"><span></span> Never</label>
+               <label class="label--l" for="radio17"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq4()">Next</button>
          </div>
       </div>
       <div id="five" style="display: none">
-         <div class="question">Without your current income, how long could you meet your regular expenses without borrowing?</div>
+         <div class="question question--l">Without your current income, how long could you meet your regular expenses without borrowing?</div>
          <div id="q5" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio18" type="radio" name="q5" value="1" id="q1" />
-               <label for="radio18"><span></span> Always</label>
+               <label class="label--l" for="radio18"><span></span> Always</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio19" type="radio" name="q5" value="2.5" id="q2" />
-               <label for="radio19"><span></span> Sometimes</label>
+               <label class="label--l" for="radio19"><span></span> Sometimes</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio20" type="radio" name="q5" value="3.5" id="q3" />
-               <label for="radio20"><span></span> Never</label>
+               <label class="label--l" for="radio20"><span></span> Never</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio21" type="radio" name="q5" value="5" id="q3" />
-               <label for="radio21"><span></span> Never</label>
+               <label class="label--l" for="radio21"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq5()">Next</button>
          </div>
       </div>
       <div id="six" style="display: none">
-         <div class="question">My spending is under control and I always have a bit left over each week / month</div>
+         <div class="question question--l">My spending is under control and I always have a bit left over each week / month</div>
          <div id="q6" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio22" type="radio" name="q6" value="1" id="q1" />
-               <label for="radio22"><span></span> Agree</label>
+               <label class="label--l" for="radio22"><span></span> Agree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio23" type="radio" name="q6" value="2.5" id="q2" />
-               <label for="radio23"><span></span> Neither agree or disagree</label>
+               <label class="label--l" for="radio23"><span></span> Neither agree or disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio24" type="radio" name="q6" value="3.5" id="q3" />
-               <label for="radio24"><span></span> Disagree</label>
+               <label class="label--l" for="radio24"><span></span> Disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radi25" type="radio" name="q6" value="5" id="q3" />
-               <label for="radi25"><span></span> Never</label>
+               <label class="label--l" for="radi25"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq6()">Next</button>
          </div>
       </div>
       <div id="seven" style="display: none">
-         <div class="question">I have long-term financial goals and a plan to achieve them</div>
+         <div class="question question--l">I have long-term financial goals and a plan to achieve them</div>
          <div id="q7" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio26" type="radio" name="q7" value="1" id="q1" />
-               <label for="radio26"><span></span> Agree</label>
+               <label class="label--l" for="radio26"><span></span> Agree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio27" type="radio" name="q7" value="2.5" id="q2" />
-               <label for="radio27"><span></span> Neither agree or disagree</label>
+               <label class="label--l" for="radio27"><span></span> Neither agree or disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio28" type="radio" name="q7" value="3.5" id="q3" />
-               <label for="radio28"><span></span> Disagree</label>
+               <label class="label--l" for="radio28"><span></span> Disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio29" type="radio" name="q7" value="5" id="q3" />
-               <label for="radio29"><span></span> Never</label>
+               <label class="label--l" for="radio29"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq7()">Next</button>
          </div>
       </div>
       <div id="eight" style="display: none">
-         <div class="question">I can afford to own a nice home</div>
+         <div class="question question--l">I can afford to own a nice home</div>
          <div id="q8" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio30" type="radio" name="q8" value="1" id="q1" />
-               <label for="radio30"><span></span> Agree</label>
+               <label class="label--l" for="radio30"><span></span> Agree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio31" type="radio" name="q8" value="2.5" id="q2" />
-               <label for="radio31"><span></span> Neither agree or disagree</label>
+               <label class="label--l" for="radio31"><span></span> Neither agree or disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio32" type="radio" name="q8" value="3.5" id="q3" />
-               <label for="radio32"><span></span> Disagree</label>
+               <label class="label--l" for="radio32"><span></span> Disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio33" type="radio" name="q8" value="5" id="q3" />
-               <label for="radio33"><span></span> Never</label>
+               <label class="label--l" for="radio33"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq8()">Next</button>
          </div>
       </div>
       <div id="nine" style="display: none">
-         <div class="question">I think I'll have enough money to retire on</div>
+         <div class="question question--l">I think I'll have enough money to retire on</div>
          <div id="q9" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio34" type="radio" name="q9" value="1" id="q1" />
-               <label for="radio34"><span></span> Agree</label>
+               <label class="label--l" for="radio34"><span></span> Agree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio35" type="radio" name="q9" value="2.5" id="q2" />
-               <label for="radio35"><span></span> Neither agree or disagree</label>
+               <label class="label--l" for="radio35"><span></span> Neither agree or disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio36" type="radio" name="q9" value="3.5" id="q3" />
-               <label for="radio36"><span></span> Disagree</label>
+               <label class="label--l" for="radio36"><span></span> Disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radi37" type="radio" name="q9" value="5" id="q3" />
-               <label for="radi37"><span></span> Never</label>
+               <label class="label--l" for="radi37"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq9()">Next</button>
          </div>
       </div>
       <div id="ten" style="display: none">
-         <div class="question">I have a plan for most things in life</div>
+         <div class="question question--l">I have a plan for most things in life</div>
          <div id="q10" class="radio-block animated animatedFadeInUp fadeInUp">
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio38" type="radio" name="q10" value="1" id="q1" />
-               <label for="radio38"><span></span> Agree</label>
+               <label class="label--l" for="radio38"><span></span> Agree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio39" type="radio" name="q10" value="2.5" id="q2" />
-               <label for="radio39"><span></span> Neither agree or disagree</label>
+               <label class="label--l" for="radio39"><span></span> Neither agree or disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radio40" type="radio" name="q10" value="3.5" id="q3" />
-               <label for="radio40"><span></span> Disagree</label>
+               <label class="label--l" for="radio40"><span></span> Disagree</label>
             </div>
-            <div class="radio-content">
+            <div class="radio-content radio-content--l">
                <input id="radi41" type="radio" name="q10" value="5" id="q3" />
-               <label for="radi41"><span></span> Never</label>
+               <label class="label--l" for="radi41"><span></span> Never</label>
             </div>
             <button class="NEXT" onclick="updateq10()">Next</button>
          </div>
