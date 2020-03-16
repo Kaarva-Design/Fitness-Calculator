@@ -36,9 +36,18 @@ function changemode(){
    // common
 
    //results
+   $("#logow3").toggle();
+   $("#logod3").toggle();
    $(".resulttitle").toggleClass("resulttitle--l");
    $(".resultcontent").toggleClass("resultcontent--l");
    //results
+
+   //form
+   $("#logow2").toggle();
+   $("#logod2").toggle();
+   $("#welcometext2").toggleClass("welcometext--l");
+   $(".forminput").toggleClass("input--l");
+   //form
    
 }
 

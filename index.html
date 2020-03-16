@@ -24,7 +24,8 @@
             <div id="progressbar" class="progressbar--l"></div>
          </div>
       </header>
-      <div id="splash" style="display: block;">
+      <!-- splashscreen -->
+      <div id="splash" style="display: none;">
          <div class="flex logowrapper">
             <img src="kaarvalogowhite.png" id="logow" style="opacity: 1; display: none;" />
             <img src="kaarvalogobrand.png" id="logod" style="opacity: 1; display: block;"  />
@@ -39,6 +40,7 @@
             <button onclick="start();" style=" position: fixed; left: 50%;transform: translate(-50%, 0); bottom: 60px; width: 60%;">Get Started</button>
          </div>
       </div>
+      <!-- splashscreen -->
       <div id="one" style="display: none;">
          <div class="question question--l">I run out of money before I get my salary</div>
          <div id="q1" class="radio-block animated animatedFadeInUp fadeInUp">
@@ -261,35 +263,37 @@
       </div>
       <div id="re" style="display: none;">
          <div class="flex">
-            <img src="kaarvalogowhite.png" id="logo" />
+            <img src="kaarvalogowhite.png" id="logow3" style="opacity: 1; display:  none;" />
+            <img src="kaarvalogobrand.png" id="logod3" style="opacity: 1; display: block;"  />
             <div id="againbtn" onclick="restart();">again</div>
          </div>
-         <div class="resulttitle" style="opacity: 1;">Your financial fitness score is</div>
+         <div class="resulttitle resulttitle--l" style="opacity: 1;">Your financial fitness score is</div>
          <div id="container"></div>
          <div id="overviewtext"></div>
          <button onclick="fillForm()">Next</button>
-         <div class="resulttitle animatedresult animatedFadeInUp fadeInUp">About your score
-            <span class="resultcontent">You've scored yourself lower than you really are. Some things to do with finances might seem scary but you're not doing as badly as perhaps you think you are.</span>
+         <div class="resulttitle resulttitle--l animatedresult animatedFadeInUp fadeInUp">About your score
+            <span class="resultcontent resultcontent--l">You've scored yourself lower than you really are. Some things to do with finances might seem scary but you're not doing as badly as perhaps you think you are.</span>
          </div>
-         <div class="resulttitle animatedresult2 animatedFadeInUp fadeInUp">Next Steps...
-            <span class="resultcontent" >Do you want to know how you scored versus other people, and want some top tips to improve your score? You are one simple step away. Your personalised benchmark report will include case studies that help explain what a financial fitness score means and give useful tips on how to improve your score, reduce money worries and get started on a journey to financial freedom.</span>
+         <div class="resulttitle resulttitle--l animatedresult2 animatedFadeInUp fadeInUp">Next Steps...
+            <span class="resultcontent resultcontent--l" >Do you want to know how you scored versus other people, and want some top tips to improve your score? You are one simple step away. Your personalised benchmark report will include case studies that help explain what a financial fitness score means and give useful tips on how to improve your score, reduce money worries and get started on a journey to financial freedom.</span>
          </div>
          <!-- Points: <span id="result"></span> -->
       </div>
-      <div id="form" style="display: none;">
+      <div id="form" style="display: block;">
          <div class="flex">
-            <img src="kaarvalogowhite.png" id="logo" />
+            <img src="kaarvalogowhite.png" id="logow2" style="opacity: 1; display:  none;" />
+            <img src="kaarvalogobrand.png" id="logod2" style="opacity: 1; display: block;"  />
             <div id="againbtn" onclick="updateq10();">go back</div>
          </div>
-         <div id="welcometext">
+         <div id="welcometext2" class="welcometext--l">
             Please enter your name and email address below
-            <div id="welcomesubtext">Please provide us with your details so we can give you tips on how to improve your financial fitness and financial wellbeing by email.</div>
+            <div id="welcomesubtext2">Please provide us with your details so we can give you tips on how to improve your financial fitness and financial wellbeing by email.</div>
             <form style="margin-top: 55px;" action=" https://formsubmit.co/care@kaarva.com " method="POST">
-               <input type="hidden" name="_webhook" value="#">
-               <input type="hidden" name="_captcha" value="false">
-               <input type="text" placeholder="Full name" name="name" required>
-               <input type="email" placeholder="Email address" name="email" required>
-               <input type="text" placeholder="Company (Optional)" name="company">
+               <input class="forminput input--l" type="hidden" name="_webhook" value="#">
+               <input class="forminput input--l" type="hidden" name="_captcha" value="false">
+               <input class="forminput input--l" type="text" placeholder="Full name" name="name" required>
+               <input class="forminput input--l" type="email" placeholder="Email address" name="email" required>
+               <input class="forminput input--l" type="text" placeholder="Company (Optional)" name="company">
                <button type="submit">Submit</button>
             </form>
          </div>

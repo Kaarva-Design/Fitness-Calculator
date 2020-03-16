@@ -46,6 +46,7 @@ body.light{
 
 .progressbar--l{
    border: 2px solid #ddd !important;
+   height: 12px !important; 
 }
 
 .progressbarwrapper {
@@ -238,7 +239,7 @@ button[disabled] {
    -webkit-animation-name: fadeInUp;
 }
 
-#logo, #logow, #logod, #logod1, #logow1 {
+#logo, #logow, #logod, #logod1, #logow1, #logow2, #logod2, #logow3, #logod3  {
    /*display: block;*/
    height: 35px;
    /*margin-bottom: 20px;*/
@@ -327,11 +328,26 @@ button[disabled] {
    margin-top: 28px
 }
 
+#welcometext2 {
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+   margin-top: 28px
+}
+
 .welcometext--l {
    color: #161c2d !important;
 }
 
 #welcomesubtext {
+   font-size: 14px;
+   font-weight: normal;
+   margin-top: 13px;
+   line-height: 19px;
+   opacity: 0.8;
+}
+
+#welcomesubtext2 {
    font-size: 14px;
    font-weight: normal;
    margin-top: 13px;
@@ -360,6 +376,15 @@ input::placeholder {
    opacity: 0.8;
    color: white;
    font-weight: normal;
+}
+
+.input--l{
+   background-color: #f9fbfd !important;
+   color: #161c2d !important;
+}
+
+.input--l::placeholder{
+   color: #161c2d !important;
 }
 
 input[type=text],
