@@ -53,6 +53,10 @@ body.light{
    border-bottom: 2px dotted #264667;
 }
 
+.progressbarwrapper--l {
+   border-bottom: 2px dotted #ddd !important;
+}
+
 h3 {
    color: #8e96ba;
    font-size: 18px;
@@ -404,7 +408,7 @@ input[type=email] {
 
 /*no landscape compatability*/
 
-.device-notification {
+/*.device-notification {
 	display: none;
 	position: fixed;
 	top: 0;
@@ -474,6 +478,6 @@ input[type=email] {
 		display: flex;
 		color: white;
 	}
-}
+}*/
 
 /*no landscape compatability*/

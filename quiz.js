@@ -33,6 +33,7 @@ function changemode(){
    $(".question").toggleClass("question--l");
    $(".radio-content").toggleClass("radio-content--l");
    $(".radio-content label").toggleClass("label--l");
+   $(".progressbarwrapper").toggleClass("progressbarwrapper--l");
    // common
 
    //results
