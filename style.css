@@ -104,13 +104,13 @@ button {
    display: block;
    background-color: #e81d61;
    border: none;
-   padding: 15px 40px;
+   padding: 12px 45px;
    margin-left: auto;
    margin-right: auto;
    border-radius: 40px;
    margin-top: 20px;
    font-size: 18px;
-   font-weight: bolder;
+   font-weight: bold;
    color: white;
    transition: all 0.2s ease;
 }
@@ -243,7 +243,7 @@ button[disabled] {
    -webkit-animation-name: fadeInUp;
 }
 
-#logo, #logow, #logod, #logod1, #logow1, #logow2, #logod2, #logow3, #logod3  {
+#logo, #logow, #logod, #logod1, #logow1, #logow2, #logod2, #logow3, #logod3, #logow4, #logod4 {
    /*display: block;*/
    height: 35px;
    /*margin-bottom: 20px;*/
@@ -297,7 +297,7 @@ button[disabled] {
    line-height: 19px;
    margin-top: 15px;
    font-weight: 500;
-   opacity: 0.7;
+   opacity: 0.75;
 }
 
 .resultcontent--l {
@@ -311,6 +311,47 @@ button[disabled] {
    margin-bottom: 25px;
 }
 
+#container2{
+   margin: 20px auto;
+   width: 200px;
+   height: 100px;
+   margin-bottom: 80px;
+   transform: scale(0.8);
+}
+
+#container2main{
+   margin-bottom: 45px;
+}
+
+#ch_name{
+   display: block;
+   color: rgb(210, 210, 210);
+   text-align: center;
+   margin-top: -80px;
+}
+
+#ch_vs{
+   color: #ffffff78;
+   text-align: center;
+   display: block;
+   font-weight: bolder;
+}
+
+#shareresultswithch{
+   color: #ffffff;
+   text-align: center;
+   margin-bottom: 25px;
+   font-weight: 600;
+}
+
+.shareresultswithch--l{
+   color: #161c2d !important;
+}
+
+.ch_vs--l{
+   color: #161c2d !important;
+}
+
 .progressbar-text {
    font-size: 50px !important;
    font-weight: 600;
@@ -318,25 +359,41 @@ button[disabled] {
 }
 
 #overviewtext {
-   font-size: 35px;
+   font-size: 26px;
    font-weight: bolder;
    text-align: center;
-   color: #0069ff;
+   color: #fff;
    margin-bottom: 36px;
+   line-height: 36px;
+}
+
+.overviewtext--l {
+   color: #161c2de8 !important;
 }
 
 #welcometext {
    color: white;
    font-weight: bold;
    font-size: 20px;
-   margin-top: 28px
+   margin-top: 28px;
+   line-height: 28px;
 }
 
 #welcometext2 {
    color: white;
    font-weight: bold;
    font-size: 20px;
-   margin-top: 28px
+   margin-top: 28px;
+   line-height: 28px;
+}
+
+#welcometext3 {
+   color: white;
+   font-weight: bold;
+   font-size: 20px;
+   margin-top: 28px;
+   line-height: 28px;
+   margin-bottom: 55px;
 }
 
 .welcometext--l {
@@ -403,6 +460,20 @@ input[type=email] {
    color: #e81d61;
    font-weight: bolder;
    padding-bottom: 5px;
+}
+
+#challenge--btn{
+   color: #0069ff;
+   text-transform: uppercase;
+   font-size: 12PX;
+   text-align: center;
+   border: 1.5px solid #0069ff;
+   padding: 12px;
+   border-radius: 2px;
+   width: 250px;
+   margin-left: auto;
+   margin-right: auto;
+   font-weight: 600;
 }
 
 

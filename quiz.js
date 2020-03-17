@@ -10,19 +10,54 @@ var q9 = 0;
 var q10 = 0;
 var finalresult = 0;
 var animate = finalresult * 1 / 5;
+let ch_animate = "";
+var checkurl = new URL (window.location);
+var ch_name = atob(checkurl.searchParams.get("n"));
+var ch_score = atob(checkurl.searchParams.get("s"));
+let user_name = "";
+let compareScoreSupportingText = "";
+
+// states
+let isCompare = false;
 
 var qcount = 1;
+
+(function checkchallenge(){
+   if(checkurl.searchParams.get("n") !== null){
+      $("#welcometextspan").html(ch_name + " just scored " + (ch_score*100/5).toFixed(0) + "%" );
+      isCompare = true;
+   }
+}());
+
+$("#storename").keyup(function () {
+   console.log("store name");
+   if ($("#storename").val().length > 2){
+      $(this).find("input").prop("checked", true);
+      $('.NEXT').removeAttr("disabled")
+      // return false;
+   } else{
+     $(".NEXT").attr("disabled", "disabled");
+   }
+   user_name = $("#storename").val()
+});
 
 function changemode(){
    // welcomescrceen
    $("#sun").toggle();
    $("#moon").toggle();
+   $("#sun1").toggle();
+   $("#moon1").toggle();
+   $("#sun2").toggle();
+   $("#moon2").toggle();
    $("#logow").toggle();
    $("#logod").toggle();
+   $("#logow4").toggle();
+   $("#logod4").toggle();
    $("#scored").toggle();
    $("#scorel").toggle();
    $("body").toggleClass("light");
    $("#welcometext").toggleClass("welcometext--l");
+   $("#welcometext3").toggleClass("welcometext--l");
    // welcomescrceen
 
    // common
@@ -41,12 +76,15 @@ function changemode(){
    $("#logod3").toggle();
    $(".resulttitle").toggleClass("resulttitle--l");
    $(".resultcontent").toggleClass("resultcontent--l");
+   $("#ch_vs").toggleClass("ch_vs--l");
+   $("#shareresultswithch").toggleClass("shareresultswithch--l");
    //results
 
    //form
    $("#logow2").toggle();
    $("#logod2").toggle();
    $("#welcometext2").toggleClass("welcometext--l");
+   $("#overviewtext").toggleClass("overviewtext--l");
    $(".forminput").toggleClass("input--l");
    //form
    
@@ -161,25 +199,6 @@ updateq9 = () => {
    console.log("q9 submitted!");
 }
 
-animatefn = () => {
-   animate = finalresult * 1 / 5
-
-   if (finalresult > 4) {
-      $("#overviewtext").html("Awesome!");
-      console.log("above 4");
-   } else if (finalresult > 3) {
-      $("#overviewtext").html("Great!");
-      console.log("above 3");
-   } else if (finalresult > 2) {
-      $("#overviewtext").html("Not bad!");
-      console.log("above 2");
-   } else {
-      $("#overviewtext").html("Poor");
-      console.log("above 1");
-   }
-
-}
-
 updateq10 = () => {
    q10 = parseFloat($('input[name="q10"]:checked').val());
    event.preventDefault();
@@ -196,11 +215,63 @@ updateq10 = () => {
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '100%';
    console.log("q10 submitted!");
+
+   (function compareScoreSupportingTextfn(){
+      console.log("I exist!")
+      if(finalresult > ch_score) {
+         compareScoreSupportingText = "higher";
+      } else {
+         compareScoreSupportingText = "lower";
+      }
+   }());
+   
+   // let compareScore = 100 * Math.abs( (finalresult - ch_score) / ( (finalresult+ch_score)/2 ) );
+
+   if(isCompare === true){
+      $("#ch_result_title").html(`You scored ${compareScoreSupportingText} than ${ch_name}!`);
+      $("#container2main").toggle();
+      ch_animate = ch_score * 1 / 5;
+      sar.animate(parseFloat(ch_animate));
+      $("#ch_name").html(`${ch_name}'s score`);
+      $("#shareresultswithch").html(`Share results with ${ch_name}`);
+   }
+
+   bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
+
+};
+
+shareResults = () => {
+   let shareresultlink = new URL('https://wa.me/');
+   shareresultlink.searchParams.set('text', `Hey ${ch_name}! I scored ${(finalresult*100/5).toFixed(0)}% to your ${(ch_score*100/5).toFixed(0)}% on the Kaarva Financial Fitness Test at https://partner.kaarva.com/financialfitnesscalculator`);
+   window.open(shareresultlink);
 }
 
+animatefn = () => {
+   animate = finalresult * 1 / 5;
+
+   if (finalresult > 4) {
+      $("#overviewtext").html("Awesome, " + user_name + "!");
+      console.log("above 4");
+   } else if (finalresult > 3) {
+      $("#overviewtext").html("Great, " + user_name + "!");
+      console.log("above 3");
+   } else if (finalresult > 2) {
+      $("#overviewtext").html("Not bad, " + user_name + "!");
+      console.log("above 2");
+   } else {
+      $("#overviewtext").html("Poor, " + user_name );
+      console.log("above 1");
+   }
+
+}
 
 start = () => {
    document.getElementById("splash").style.display = "none";
+   document.getElementById("entername").style.display = "block";
+}
+
+startquiz = () => {
+   document.getElementById("entername").style.display = "none";
    document.getElementById("one").style.display = "block";
    document.getElementById("head").style.display = "block";
 }
@@ -265,10 +336,47 @@ var bar = new ProgressBar.SemiCircle(container, {
       bar.text.style.color = state.color;
    }
 });
-bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-bar.text.style.fontSize = '2rem';
 
-bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
+var sar = new ProgressBar.SemiCircle(container2, {
+   strokeWidth: 4,
+   color: '#d2d2d2',
+   trailColor: '#eee',
+   trailWidth: 1,
+   easing: 'easeInOut',
+   duration: 1400,
+   svgStyle: null,
+   text: {
+      value: '0',
+      alignToBottom: true
+   },
+   from: {
+      color: '#d2d2d2'
+   },
+   to: {
+      color: '#d2d2d2'
+   },
+   // Set default step function for all animate calls
+   step: (state, bar) => {
+      bar.path.setAttribute('stroke', state.color);
+      var value = bar.value() * 5;
+      if (value === 0) {
+         bar.setText('');
+      } else {
+         bar.setText(value.toFixed(2));
+      }
+
+      bar.text.style.color = state.color;
+   }
+});
+
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '3rem';
+bar.text.style.fontWeight = '600';
+
+sar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+sar.text.style.fontSize = '3rem';
+sar.text.style.fontWeight = '600';
+
 
 $(".radio-content").click(function () {
    console.log("button clicked");
@@ -276,3 +384,16 @@ $(".radio-content").click(function () {
    $('.NEXT').removeAttr("disabled")
    return false;
 });
+
+function challengeFriend() {
+   //createurl 
+   let originurl = new URL("https://partner.kaarva.com/financialfitnesscalculator");
+   originurl.searchParams.set('n', btoa(user_name));
+   originurl.searchParams.set('s', btoa(finalresult));
+   // let originnameandresult = "?name=" + "Rohan" + "&?score=" + finalresult;
+
+   //appendurl
+   let append = new URL('https://wa.me/')
+   append.searchParams.set('text', `${user_name} just took Kaarva's Financial Fitness Test and got ${(finalresult*100/5).toFixed(0)}%. Take the free test to see how you compare with ${user_name}! ${originurl}`);
+   window.open(append);
+}

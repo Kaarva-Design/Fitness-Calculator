@@ -17,14 +17,16 @@
          <div class="flex logowrapper">
             <img src="kaarvalogowhite.png" id="logow1" style="opacity: 1; display:  none;" />
             <img src="kaarvalogobrand.png" id="logod1" style="opacity: 1; display: block;"  />
-            <div id="fitnesscalc" class="fitnesscalc--l" style="color: white; padding-bottom: 5px; font-weight: bolder; opacity: 0.8;"><span style="color: #e81d61">fitness</span> calculator</div>
+            <img id="sun2" src="sun.svg" style="height: 25px; opacity: 0.5; display: none;" onclick="changemode();" />
+            <img id="moon2" src="moon.svg" style="height: 18px; padding-right: 4px; opacity: 0.5; display: block;" onclick="changemode();" />
+            <!-- div id="fitnesscalc" class="fitnesscalc--l" style="color: white; padding-bottom: 5px; font-weight: bolder; opacity: 0.8;"><span style="color: #e81d61">fitness</span> calculator</div> -->
          </div>
          <div class="flex progressbarwrapper progressbarwrapper--l">
             <h3><span id="qcount">1</span> <span class="question--length">/10</span></h3>
             <div id="progressbar" class="progressbar--l"></div>
          </div>
       </header>
-      <!-- splashscreen -->
+      <!-- splashscreen start-->
       <div id="splash" style="display: block;">
          <div class="flex logowrapper">
             <img src="kaarvalogowhite.png" id="logow" style="opacity: 1; display: none;" />
@@ -33,14 +35,25 @@
             <img id="moon" src="moon.svg" style="height: 18px; padding-right: 4px; opacity: 0.5; display: block;" onclick="changemode();" />
          </div>
          <div id="welcometext" class="welcometext--l">
-            Financial Fitness Calculator
+           <span id="welcometextspan">Financial Fitness Calculator</span>
             <div id="welcomesubtext" class="welcomesubtext--l">Find out your Financial Fitness Score in less than five minutes.</div>
             <img id="scored" src="score.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto; display: none;" />
             <img id="scorel" src="score-l.gif" style="max-width: 100%;margin-top: 30px; opacity: 0.5; display: block; margin-left: auto; margin-right: auto; display: block;" />
             <button onclick="start();" style=" position: fixed; left: 50%;transform: translate(-50%, 0); bottom: 60px; width: 60%;">Get Started</button>
          </div>
       </div>
-      <!-- splashscreen -->
+      <!-- splashscreen end-->
+      <div id="entername" style="display: none;">
+         <div class="flex logowrapper">
+            <img src="kaarvalogowhite.png" id="logow4" style="opacity: 1; display: none;" />
+            <img src="kaarvalogobrand.png" id="logod4" style="opacity: 1; display: block;"  />
+            <img id="sun1" src="sun.svg" style="height: 25px; opacity: 0.5; display: none;" onclick="changemode();" />
+            <img id="moon1" src="moon.svg" style="height: 18px; padding-right: 4px; opacity: 0.5; display: block;" onclick="changemode();" />
+         </div>
+         <div id="welcometext3" class="welcometext--l">Please enter your name to continue</div>
+         <input id="storename" class="forminput input--l" type="text" placeholder="First Name" />
+         <button type="submit" onclick="startquiz();" class="NEXT" disabled="disabled">Continue</button>
+      </div>
       <div id="one" style="display: none;">
          <div class="question question--l">I run out of money before I get my salary</div>
          <div id="q1" class="radio-block animated animatedFadeInUp fadeInUp">
@@ -267,17 +280,23 @@
             <img src="kaarvalogobrand.png" id="logod3" style="opacity: 1; display: block;"  />
             <div id="againbtn" onclick="restart();">again</div>
          </div>
-         <div class="resulttitle resulttitle--l" style="opacity: 1;">Your financial fitness score is</div>
+         <div class="resulttitle resulttitle--l" style="opacity: 1;"><span id="ch_result_title">Your financial fitness score is</span></div>
          <div id="container"></div>
-         <div id="overviewtext"></div>
-         <button onclick="fillForm()">Next</button>
+         <div id="overviewtext" class="overviewtext--l"></div>
+         <div id="container2main" style="display: none;">
+            <span id="ch_vs" class="ch_vs--l">vs.</span>
+            <div id="container2"></div>
+            <span id="ch_name"></span>
+         </div>
+         <div id="shareresultswithch" class="shareresultswithch--l" display="none" onclick="shareResults();"></div>
+         <div id="challenge--btn" onclick="challengeFriend()">Challenge your friends</div>
          <div class="resulttitle resulttitle--l animatedresult animatedFadeInUp fadeInUp">About your score
             <span class="resultcontent resultcontent--l">You've scored yourself lower than you really are. Some things to do with finances might seem scary but you're not doing as badly as perhaps you think you are.</span>
          </div>
          <div class="resulttitle resulttitle--l animatedresult2 animatedFadeInUp fadeInUp">Next Steps...
             <span class="resultcontent resultcontent--l" >Do you want to know how you scored versus other people, and want some top tips to improve your score? You are one simple step away. Your personalised benchmark report will include case studies that help explain what a financial fitness score means and give useful tips on how to improve your score, reduce money worries and get started on a journey to financial freedom.</span>
          </div>
-         <button onclick="fillForm()">Next</button>
+         <button onclick="fillForm()" style="font-size: 16px">Get your free report</button>
          <!-- Points: <span id="result"></span> -->
       </div>
       <div id="form" style="display: none;">
