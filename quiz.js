@@ -427,8 +427,6 @@ var script_url = "https://script.google.com/macros/s/AKfycbxjbfM8x2S-2YAD7W6P48S
 
   function insert_value2() {
 
-   alert("Thank you! You will receive your free report soon.")
-
    let nameForReport = $("#nameforreport").val();
    let emailForReport = $("#emailforreport").val();
    let companyForReport = $("#companyforreport").val();
@@ -443,6 +441,11 @@ var script_url = "https://script.google.com/macros/s/AKfycbxjbfM8x2S-2YAD7W6P48S
       method: "GET",
       dataType: "jsonp"
     });
+
+   event.preventDefault();
+
+   alert("Thank you! You will receive your free report soon.")
+   window.open('https://partner.kaarva.com/financialfitnesscalculator/', '_self');
 
   }
 

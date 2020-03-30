@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta charset="ISO-8859-1"> 
+      <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
       <meta name="author" content="thoran">
       <link rel="icon" type="image/png" href="fav.png">
@@ -310,13 +310,15 @@
          <div id="welcometext2" class="welcometext--l">
             Please enter your name and email address below
             <div id="welcomesubtext2">Please provide us with your details so we can give you tips on how to improve your financial fitness and financial wellbeing by email.</div>
-            <form action="https://formsubmit.co/care@kaarva.com" method="POST" style="margin-top: 55px;">
-               <input type="hidden" name="_webhook" value="https://partner.kaarva.com/financialfitnesscalculator/">
-               <input type="hidden" name="_captcha" value="false">
+            <!-- <form action="https://formsubmit.co/care@kaarva.com" method="POST" style="margin-top: 55px;"> -->
+            <form style="margin-top: 55px;">
+               <!-- <input type="hidden" name="_next" value="https://partner.kaarva.com/financialfitnesscalculator/">
+               <input type="hidden" name="_captcha" value="false"> -->
                <input id="nameforreport" class="forminput input--l" type="text" placeholder="Full name" name="name" required>
                <input id="emailforreport" class="forminput input--l" type="email" placeholder="Email address" name="email" required>
                <input id="companyforreport" class="forminput input--l" type="text" placeholder="Company (Optional)" name="company">
-               <button onclick="insert_value2();" type="submit">Submit</button>
+               <button onclick="insert_value2();">Submit</button>
+               <!-- <button onclick="insert_value2();" type="submit">Submit</button> -->
             </form>
          </div>
       </div>
