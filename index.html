@@ -303,7 +303,7 @@
       </div>
       <div id="form" style="display: none;">
          <div class="flex">
-            <img src="kaarvalogowhite.png" id="logow2" style="opacity: 1; display:  none;" />
+            <img src="kaarvalogowhite.png" id="logow2" style="opacity: 1; display: none;" />
             <img src="kaarvalogobrand.png" id="logod2" style="opacity: 1; display: block;"  />
             <div id="againbtn" onclick="updateq10();">go back</div>
          </div>
@@ -313,10 +313,10 @@
             <form action="https://formsubmit.co/care@kaarva.com" method="POST" style="margin-top: 55px;">
                <!-- <input type="hidden" name="_webhook" value="https://partner.kaarva.com"> -->
                <input type="hidden" name="_captcha" value="false">
-               <input class="forminput input--l" type="text" placeholder="Full name" name="name" required>
-               <input class="forminput input--l" type="email" placeholder="Email address" name="email" required>
-               <input class="forminput input--l" type="text" placeholder="Company (Optional)" name="company">
-               <button type="submit">Submit</button>
+               <input id="nameforreport" class="forminput input--l" type="text" placeholder="Full name" name="name" required>
+               <input id="emailforreport" class="forminput input--l" type="email" placeholder="Email address" name="email" required>
+               <input id="companyforreport" class="forminput input--l" type="text" placeholder="Company (Optional)" name="company">
+               <button onclick="insert_value2();" type="submit">Submit</button>
             </form>
          </div>
       </div>

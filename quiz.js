@@ -102,6 +102,7 @@ updateq1 = () => {
    document.getElementById("progressbar").style.backgroundSize = '10%';
    // console.log("q1 submitted!");
    $('#logo').css('margin-left', '')
+
 }
 
 updateq2 = () => {
@@ -114,6 +115,7 @@ updateq2 = () => {
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '20%';
    // console.log("q2 submitted!");
+
 }
 
 updateq3 = () => {
@@ -215,6 +217,8 @@ updateq10 = () => {
    qcount = 1;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '100%';
+
+   insert_value();
    // console.log("q10 submitted!");
 
    // (function compareScoreSupportingTextfn(){
@@ -397,4 +401,61 @@ $(".radio-content").click(function () {
 //    let append = new URL('https://wa.me/')
 //    append.searchParams.set('text', `${userName} just took Kaarva's Financial Fitness Test and got ${(finalresult*100/5).toFixed(0)}%. Take the free test to see how you compare with ${userName}! ${originurl}`);
 //    window.open(append);
+// }
+
+
+// submissions
+var script_url = "https://script.google.com/macros/s/AKfycbxjbfM8x2S-2YAD7W6P48SByN55f_uGtD5tOW6K7FP9rm20IJc/exec";
+
+  // Make an AJAX call to Google Script
+  function insert_value() {
+
+   var name= userName;
+   
+   
+    var url = script_url+"?callback=&name="+name+"&q1="+ q1 +"&q2="+ q2 +"&q3="+ q3 +"&q4="+ q4 +"&q5="+ q5 + "&q6="+ q6 +"&q7="+ q7 +"&q8="+ q8 +"&q9="+ q9 +"&q10="+ q10 +"&result="+ finalresult +"&action=insert";
+  
+
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+
+  }
+
+  function insert_value2() {
+
+   console.log("i exist");
+
+   let nameForReport = $("#nameforreport").val();
+   let emailForReport = $("#emailforreport").val();
+   let companyForReport = $("#companyforreport").val();
+   
+   
+   var url = script_url+"?callback=&name1="+nameForReport+"&email="+ emailForReport + "&result1="+ finalresult + "&company="+ companyForReport +"&action=insert2";
+  
+
+    var request = jQuery.ajax({
+      crossDomain: true,
+      url: url ,
+      method: "GET",
+      dataType: "jsonp"
+    });
+
+  }
+
+// function update_value(){   
+//    var name= $("#name").val();
+   
+//    var url = script_url+"?callback=&name="+name+"&q1="+ q1 +"&q2="+ q2 +"&q3="+ q3 + "&action=update";
+  
+//    var request = jQuery.ajax({
+//       crossDomain: true,
+//       url: url ,
+//       method: "GET",
+//       dataType: "jsonp"
+//    });
+   
 // }
