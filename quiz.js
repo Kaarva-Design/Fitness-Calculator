@@ -427,7 +427,7 @@ var script_url = "https://script.google.com/macros/s/AKfycbxjbfM8x2S-2YAD7W6P48S
 
   function insert_value2() {
 
-   console.log("i exist");
+   alert("Thank you! You will receive your free report soon.")
 
    let nameForReport = $("#nameforreport").val();
    let emailForReport = $("#emailforreport").val();
