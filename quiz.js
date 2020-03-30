@@ -10,27 +10,28 @@ var q9 = 0;
 var q10 = 0;
 var finalresult = 0;
 var animate = finalresult * 1 / 5;
-let ch_animate = "";
-var checkurl = new URL (window.location);
-var ch_name = atob(checkurl.searchParams.get("n"));
-var ch_score = atob(checkurl.searchParams.get("s"));
-let user_name = "";
-let compareScoreSupportingText = "";
+let userName = "";
+// let ch_animate = "";
+// var checkurl = new URL (window.location);
+// var ch_name = atob(checkurl.searchParams.get("n"));
+// var ch_score = atob(checkurl.searchParams.get("s"));
+
+// let compareScoreSupportingText = "";
 
 // states
-let isCompare = false;
+// let isCompare = false;
 
 var qcount = 1;
 
-(function checkchallenge(){
-   if(checkurl.searchParams.get("n") !== null){
-      $("#welcometextspan").html(ch_name + " just scored " + (ch_score*100/5).toFixed(0) + "%" );
-      isCompare = true;
-   }
-}());
+// (function checkchallenge(){
+//    if(checkurl.searchParams.get("n") !== null){
+//       $("#welcometextspan").html(ch_name + " just scored " + (ch_score*100/5).toFixed(0) + "%" );
+//       isCompare = true;
+//    }
+// }());
 
 $("#storename").keyup(function () {
-   console.log("store name");
+   // console.log("store name");
    if ($("#storename").val().length > 2){
       $(this).find("input").prop("checked", true);
       $('.NEXT').removeAttr("disabled")
@@ -38,7 +39,7 @@ $("#storename").keyup(function () {
    } else{
      $(".NEXT").attr("disabled", "disabled");
    }
-   user_name = $("#storename").val()
+   userName = $("#storename").val()
 });
 
 function changemode(){
@@ -99,7 +100,7 @@ updateq1 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '10%';
-   console.log("q1 submitted!");
+   // console.log("q1 submitted!");
    $('#logo').css('margin-left', '')
 }
 
@@ -112,7 +113,7 @@ updateq2 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '20%';
-   console.log("q2 submitted!");
+   // console.log("q2 submitted!");
 }
 
 updateq3 = () => {
@@ -124,7 +125,7 @@ updateq3 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '30%';
-   console.log("q3 submitted!");
+   // console.log("q3 submitted!");
 }
 
 updateq4 = () => {
@@ -136,7 +137,7 @@ updateq4 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '40%';
-   console.log("q4 submitted!");
+   // console.log("q4 submitted!");
 }
 
 updateq5 = () => {
@@ -148,7 +149,7 @@ updateq5 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '50%';
-   console.log("q5 submitted!");
+   // console.log("q5 submitted!");
 }
 
 updateq6 = () => {
@@ -160,7 +161,7 @@ updateq6 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '60%';
-   console.log("q6 submitted!");
+   // console.log("q6 submitted!");
 }
 
 updateq7 = () => {
@@ -172,7 +173,7 @@ updateq7 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '70%';
-   console.log("q7 submitted!");
+   // console.log("q7 submitted!");
 }
 
 updateq8 = () => {
@@ -184,7 +185,7 @@ updateq8 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '80%';
-   console.log("q8 submitted!");
+   // console.log("q8 submitted!");
 }
 
 updateq9 = () => {
@@ -196,7 +197,7 @@ updateq9 = () => {
    qcount++;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '90%';
-   console.log("q9 submitted!");
+   // console.log("q9 submitted!");
 }
 
 updateq10 = () => {
@@ -214,53 +215,53 @@ updateq10 = () => {
    qcount = 1;
    document.getElementById("qcount").innerHTML = qcount;
    document.getElementById("progressbar").style.backgroundSize = '100%';
-   console.log("q10 submitted!");
+   // console.log("q10 submitted!");
 
-   (function compareScoreSupportingTextfn(){
-      console.log("I exist!")
-      if(finalresult > ch_score) {
-         compareScoreSupportingText = "higher";
-      } else {
-         compareScoreSupportingText = "lower";
-      }
-   }());
+   // (function compareScoreSupportingTextfn(){
+   //    console.log("I exist!")
+   //    if(finalresult > ch_score) {
+   //       compareScoreSupportingText = "higher";
+   //    } else {
+   //       compareScoreSupportingText = "lower";
+   //    }
+   // }());
    
    // let compareScore = 100 * Math.abs( (finalresult - ch_score) / ( (finalresult+ch_score)/2 ) );
 
-   if(isCompare === true){
-      $("#ch_result_title").html(`You scored ${compareScoreSupportingText} than ${ch_name}!`);
-      $("#container2main").toggle();
-      ch_animate = ch_score * 1 / 5;
-      sar.animate(parseFloat(ch_animate));
-      $("#ch_name").html(`${ch_name}'s score`);
-      $("#shareresultswithch").html(`Share results with ${ch_name}`);
-   }
+//    if(isCompare === true){
+//       $("#ch_result_title").html(`You scored ${compareScoreSupportingText} than ${ch_name}!`);
+//       $("#container2main").toggle();
+//       ch_animate = ch_score * 1 / 5;
+//       sar.animate(parseFloat(ch_animate));
+//       $("#ch_name").html(`${ch_name}'s score`);
+//       $("#shareresultswithch").html(`Share results with ${ch_name}`);
+//    }
 
-   bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
+//    bar.animate(parseFloat(animate)); // Number from 0.0 to 1.0
 
-};
+// };
 
-shareResults = () => {
-   let shareresultlink = new URL('https://wa.me/');
-   shareresultlink.searchParams.set('text', `Hey ${ch_name}! I scored ${(finalresult*100/5).toFixed(0)}% to your ${(ch_score*100/5).toFixed(0)}% on the Kaarva Financial Fitness Test at https://partner.kaarva.com/financialfitnesscalculator`);
-   window.open(shareresultlink);
+// shareResults = () => {
+//    let shareresultlink = new URL('https://wa.me/');
+//    shareresultlink.searchParams.set('text', `Hey ${ch_name}! I scored ${(finalresult*100/5).toFixed(0)}% to your ${(ch_score*100/5).toFixed(0)}% on the Kaarva Financial Fitness Test at https://partner.kaarva.com/financialfitnesscalculator`);
+//    window.open(shareresultlink);
 }
 
 animatefn = () => {
    animate = finalresult * 1 / 5;
 
    if (finalresult > 4) {
-      $("#overviewtext").html("Awesome, " + user_name + "!");
-      console.log("above 4");
+      $("#overviewtext").html("Awesome, " + userName + "!");
+      // console.log("above 4");
    } else if (finalresult > 3) {
-      $("#overviewtext").html("Great, " + user_name + "!");
-      console.log("above 3");
+      $("#overviewtext").html("Great, " + userName + "!");
+      // console.log("above 3");
    } else if (finalresult > 2) {
-      $("#overviewtext").html("Not bad, " + user_name + "!");
-      console.log("above 2");
+      $("#overviewtext").html("Not bad, " + userName + "!");
+      // console.log("above 2");
    } else {
-      $("#overviewtext").html("Poor, " + user_name );
-      console.log("above 1");
+      $("#overviewtext").html("Poor, " + userName );
+      // console.log("above 1");
    }
 
 }
@@ -379,21 +380,21 @@ sar.text.style.fontWeight = '600';
 
 
 $(".radio-content").click(function () {
-   console.log("button clicked");
+   // console.log("button clicked");
    $(this).find("input").prop("checked", true);
    $('.NEXT').removeAttr("disabled")
    return false;
 });
 
-function challengeFriend() {
-   //createurl 
-   let originurl = new URL("https://partner.kaarva.com/financialfitnesscalculator");
-   originurl.searchParams.set('n', btoa(user_name));
-   originurl.searchParams.set('s', btoa(finalresult));
-   // let originnameandresult = "?name=" + "Rohan" + "&?score=" + finalresult;
+// function challengeFriend() {
+//    //createurl 
+//    let originurl = new URL("https://partner.kaarva.com/financialfitnesscalculator");
+//    originurl.searchParams.set('n', btoa(userName));
+//    originurl.searchParams.set('s', btoa(finalresult));
+//    // let originnameandresult = "?name=" + "Rohan" + "&?score=" + finalresult;
 
-   //appendurl
-   let append = new URL('https://wa.me/')
-   append.searchParams.set('text', `${user_name} just took Kaarva's Financial Fitness Test and got ${(finalresult*100/5).toFixed(0)}%. Take the free test to see how you compare with ${user_name}! ${originurl}`);
-   window.open(append);
-}
+//    //appendurl
+//    let append = new URL('https://wa.me/')
+//    append.searchParams.set('text', `${userName} just took Kaarva's Financial Fitness Test and got ${(finalresult*100/5).toFixed(0)}%. Take the free test to see how you compare with ${userName}! ${originurl}`);
+//    window.open(append);
+// }
