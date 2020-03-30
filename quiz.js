@@ -1,21 +1,25 @@
-var q1 = 0;
-var q2 = 0;
-var q3 = 0;
-var q4 = 0;
-var q5 = 0;
-var q6 = 0;
-var q7 = 0;
-var q8 = 0;
-var q9 = 0;
-var q10 = 0;
-var finalresult = 0;
-var animate = finalresult * 1 / 5;
+let quiz = {
+   q1: 0,
+   q2: 0,
+   q3: 0,
+   q4: 0,
+   q5: 0,
+   q6: 0,
+   q7: 0,
+   q8: 0,
+   q9: 0,
+   q10: 0,
+   finalresult: 0
+};
+
+let animate = quiz.finalresult * 1 / 5;
 let ch_animate = "";
-var checkurl = new URL (window.location);
-var ch_name = atob(checkurl.searchParams.get("n"));
-var ch_score = atob(checkurl.searchParams.get("s"));
+let checkurl = new URL (window.location);
+let ch_name = atob(checkurl.searchParams.get("n"));
+let ch_score = atob(checkurl.searchParams.get("s"));
 let user_name = "";
 let compareScoreSupportingText = "";
+// var getlocal = localStorage.getItem('mode');
 
 // states
 let isCompare = false;
@@ -38,10 +42,21 @@ $("#storename").keyup(function () {
    } else{
      $(".NEXT").attr("disabled", "disabled");
    }
-   user_name = $("#storename").val()
+   user_name = $("#storename").val();
 });
 
+// (function checkMode() {
+//    if(getlocal === "active"){
+//       changemode();
+//       console.log("mode read")
+//    }
+// }());
+
+
 function changemode(){
+  
+   // localStorage.setItem('mode','active');
+
    // welcomescrceen
    $("#sun").toggle();
    $("#moon").toggle();
@@ -91,7 +106,7 @@ function changemode(){
 }
 
 updateq1 = () => {
-   q1 = parseFloat($('input[name="q1"]:checked').val());
+   quiz.q1 = parseFloat($('input[name="q1"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("one").style.display = "none";
@@ -104,7 +119,7 @@ updateq1 = () => {
 }
 
 updateq2 = () => {
-   q2 = parseFloat($('input[name="q2"]:checked').val());
+   quiz.q2 = parseFloat($('input[name="q2"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("two").style.display = "none";
@@ -116,7 +131,7 @@ updateq2 = () => {
 }
 
 updateq3 = () => {
-   q3 = parseFloat($('input[name="q3"]:checked').val());
+   quiz.q3 = parseFloat($('input[name="q3"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("three").style.display = "none";
@@ -128,7 +143,7 @@ updateq3 = () => {
 }
 
 updateq4 = () => {
-   q4 = parseFloat($('input[name="q4"]:checked').val());
+   quiz.q4 = parseFloat($('input[name="q4"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("four").style.display = "none";
@@ -140,7 +155,7 @@ updateq4 = () => {
 }
 
 updateq5 = () => {
-   q5 = parseFloat($('input[name="q5"]:checked').val());
+   quiz.q5 = parseFloat($('input[name="q5"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("five").style.display = "none";
@@ -152,7 +167,7 @@ updateq5 = () => {
 }
 
 updateq6 = () => {
-   q6 = parseFloat($('input[name="q6"]:checked').val());
+   quiz.q6 = parseFloat($('input[name="q6"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("six").style.display = "none";
@@ -164,7 +179,7 @@ updateq6 = () => {
 }
 
 updateq7 = () => {
-   q7 = parseFloat($('input[name="q7"]:checked').val());
+   quiz.q7 = parseFloat($('input[name="q7"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("seven").style.display = "none";
@@ -176,7 +191,7 @@ updateq7 = () => {
 }
 
 updateq8 = () => {
-   q8 = parseFloat($('input[name="q8"]:checked').val());
+   quiz.q8 = parseFloat($('input[name="q8"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("eight").style.display = "none";
@@ -188,7 +203,7 @@ updateq8 = () => {
 }
 
 updateq9 = () => {
-   q9 = parseFloat($('input[name="q9"]:checked').val());
+   quiz.q9 = parseFloat($('input[name="q9"]:checked').val());
    event.preventDefault();
    $(".NEXT").attr("disabled", "disabled");
    document.getElementById("nine").style.display = "none";
@@ -200,9 +215,9 @@ updateq9 = () => {
 }
 
 updateq10 = () => {
-   q10 = parseFloat($('input[name="q10"]:checked').val());
+   quiz.q10 = parseFloat($('input[name="q10"]:checked').val());
    event.preventDefault();
-   finalresult = (q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10) * 10 / 100;
+   quiz.finalresult = (quiz.q1 + quiz.q2 + quiz.q3 + quiz.q4 + quiz.q5 + quiz.q6 + quiz.q7 + quiz.q8 + quiz.q9 + quiz.q10) * 10 / 100;
    animatefn();
    bar.animate(animate);
    // document.getElementById("result").innerHTML = finalresult;
@@ -218,7 +233,7 @@ updateq10 = () => {
 
    (function compareScoreSupportingTextfn(){
       console.log("I exist!")
-      if(finalresult > ch_score) {
+      if(quiz.finalresult > ch_score) {
          compareScoreSupportingText = "higher";
       } else {
          compareScoreSupportingText = "lower";
@@ -242,20 +257,20 @@ updateq10 = () => {
 
 shareResults = () => {
    let shareresultlink = new URL('https://wa.me/');
-   shareresultlink.searchParams.set('text', `Hey ${ch_name}! I scored ${(finalresult*100/5).toFixed(0)}% to your ${(ch_score*100/5).toFixed(0)}% on the Kaarva Financial Fitness Test at https://partner.kaarva.com/financialfitnesscalculator`);
+   shareresultlink.searchParams.set('text', `Hey ${ch_name}! I scored ${(quiz.finalresult*100/5).toFixed(0)}% to your ${(ch_score*100/5).toFixed(0)}% on the Kaarva Financial Fitness Test at https://partner.kaarva.com/financialfitnesscalculator`);
    window.open(shareresultlink);
 }
 
 animatefn = () => {
-   animate = finalresult * 1 / 5;
+   animate = quiz.finalresult * 1 / 5;
 
-   if (finalresult > 4) {
+   if (quiz.finalresult > 4) {
       $("#overviewtext").html("Awesome, " + user_name + "!");
       console.log("above 4");
-   } else if (finalresult > 3) {
+   } else if (quiz.finalresult > 3) {
       $("#overviewtext").html("Great, " + user_name + "!");
       console.log("above 3");
-   } else if (finalresult > 2) {
+   } else if (quiz.finalresult > 2) {
       $("#overviewtext").html("Not bad, " + user_name + "!");
       console.log("above 2");
    } else {
@@ -282,7 +297,7 @@ restart = () => {
    document.getElementById("re").style.display = "none";
    document.getElementById("one").style.display = "block";
    document.getElementById("head").style.display = "block";
-   finalresult = 0;
+   quiz.finalresult = 0;
    document.getElementById("progressbar").style.backgroundSize = '0%';
    $('input[name=q1]').attr('checked', false);
    $('input[name=q2]').attr('checked', false);
@@ -389,11 +404,11 @@ function challengeFriend() {
    //createurl 
    let originurl = new URL("https://partner.kaarva.com/financialfitnesscalculator");
    originurl.searchParams.set('n', btoa(user_name));
-   originurl.searchParams.set('s', btoa(finalresult));
+   originurl.searchParams.set('s', btoa(quiz.finalresult));
    // let originnameandresult = "?name=" + "Rohan" + "&?score=" + finalresult;
 
    //appendurl
    let append = new URL('https://wa.me/')
-   append.searchParams.set('text', `${user_name} just took Kaarva's Financial Fitness Test and got ${(finalresult*100/5).toFixed(0)}%. Take the free test to see how you compare with ${user_name}! ${originurl}`);
+   append.searchParams.set('text', `${user_name} just took Kaarva's Financial Fitness Test and got ${(quiz.finalresult*100/5).toFixed(0)}%. Take the free test to see how you compare with ${user_name}! ${originurl}`);
    window.open(append);
 }
